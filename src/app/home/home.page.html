@@ -9,15 +9,11 @@
     </ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-segment [(ngModel)]="componenteActual" value="home" (ionChange)="segmentChanged($event)">
+    <ion-segment [(ngModel)]="componenteActual" value="qr" (ionChange)="segmentChanged($event)">
 
       <ion-segment-button value="qr">
         <ion-label>QR</ion-label>
       </ion-segment-button>
-
-      <!-- <ion-segment-button value="misclase" *ngIf="!datos" [disabled]="bloquear">
-        <ion-label>Asistencia</ion-label>
-      </ion-segment-button> -->
 
       <ion-segment-button value="misclases">
         <ion-label>Asistencia</ion-label>
@@ -42,8 +38,9 @@
 
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-button (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
+  <ion-toolbar style="text-align: center;">
+    <ion-button (click)="cerrarSesion()" color="white" shape="round" id="cerrarSesion">
+      <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
       Cerrar sesión
     </ion-button>
   </ion-toolbar>
