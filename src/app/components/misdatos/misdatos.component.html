@@ -1,0 +1,43 @@
+<ion-content>
+
+  <h2>Mis datos</h2>
+
+  <ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Nombre" placeholder="Ingrese Nombre" [(ngModel)]="usuario.nombre"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input label="Apellido" placeholder="Ingrese Apellido" [(ngModel)]="usuario.apellido"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Correo" type="email" placeholder="Ingrese Correo Institucional" [(ngModel)]="usuario.correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Pregunta Secreta" placeholder="Ingrese pregunta secreta" [(ngModel)]="usuario.preguntaSecreta"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Respuesta Secreta" placeholder="Ingrese respuesta secreta" [(ngModel)]="usuario.respuestaSecreta"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input label="Contraseña" type="password" [(ngModel)]="usuario.password" placeholder="Ingrese contraseña"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Repetir Contraseña" type="password" [(ngModel)]="repeticionPassword" placeholder="Vuelva a repetir la contraseña"></ion-input>
+      </ion-item>
+
+    </ion-list>
+  </ion-list>
+
+  <ion-label class="listaClase">
+    <ion-button (click)="actualizarPerfil()" shape="round">
+      Actualizar mis datos
+    </ion-button>
+  </ion-label>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-content class="ion-padding-horizontal" >
+  <ion-title class="ion-padding-top">
+    <ion-label class="ion-text-center" >
+      <h1 #Bienvenida *ngIf="!escaneando">¡Bienvenid&#64;!</h1>
+      <h2 #Nombre *ngIf="usuario">{{ usuario.nombre  }} {{ usuario.apellido }}</h2>
+      <p>Escanea el código QR para registrar tu asistencia a clases</p>
+    </ion-label>
+  </ion-title>
+  <ion-content>
+    <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()">
+      Comenzar Escaneo de QR
+    </ion-button>
+  
+    <ion-button *ngIf="escaneando && plataforma === 'web'" (click)="detenerEscaneoQR()">
+      Detener escaneo de QR
+    </ion-button>
+  
+    <video #video [hidden]="!escaneando" width="100%"></video>
+    <canvas #canvas hidden></canvas>
+  </ion-content>
+    
+    
+</ion-content>
