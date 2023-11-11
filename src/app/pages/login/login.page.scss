@@ -27,6 +27,7 @@ ion-content{
   
   h1, h2, h3 {
     font-family: 'Merriweather Bold' !important;
+    color: white;
   }
   
   a {
@@ -41,3 +42,6 @@ ion-content{
     background-color: rgba(26, 25, 25, 0.8)!important;
   }
   
+  ion-input{
+    color: white;
+  }

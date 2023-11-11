@@ -50,3 +50,12 @@ ion-card-title {
 ion-card {
   background-color: rgba(30, 30, 30, 0.95);
 }
+
+ion-header {
+  background-color: #121212;
+  --background: #121212;
+}
+
+ion-title, ion-select {
+  color: white
+}

@@ -62,3 +62,22 @@ ion-button {
 h2 {
   padding-left: 1rem;
 }
+
+ion-content {
+  --background: #121212;
+}
+
+ion-input {
+  --background: #121212;
+  color: white;
+}
+
+ion-item, ion-list {
+  --background: #121212;
+}
+
+:host {
+  --ion-background-color: #121212;
+  background-color: #121212;
+  --background: #121212;
+}
