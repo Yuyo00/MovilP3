@@ -35,10 +35,12 @@ ion-header {
 
 h4, p, h5 {
   font-family: 'Merriweather Light' !important;
+  color: white;
 }
 
 h1, h2, h3 {
   font-family: 'Merriweather Bold' !important;
+  color: white
 }
 
 .qr {
@@ -56,10 +58,19 @@ a {
 }
 
 #cerrarSesion {
-  --background: rgb(0, 0, 0, 0.5) !important; 
+  --background: rgba(0, 0, 0, 0.897) !important; 
   // --background: red;
   border-color: white !important;
   border: solid !important;
   border-radius: 21px !important;
   font-family: 'Lato Regular' !important;
+}
+
+ion-footer, ion-header, ion-toolbar {
+  --background: #1f1f1f !important;
+  background-color: #1f1f1f !important;
+}
+
+ion-label {
+  color: white
 }

@@ -3,6 +3,7 @@ ion-content{
     --padding-bottom: 20px;
     --padding-end: 20px;
     --padding-start: 20px;
+    --background: #201c1c;
 }
 
 $color-orange: #FFB800;
@@ -22,13 +23,30 @@ ion-content, h5 {
 
 h4, p {
     font-family: 'Merriweather Light' !important;
+    color: white;
 }
 
 h1, h2, h3 {
     font-family: 'Merriweather Bold' !important;
+    color: white;
 }
 
 a {
     font-family: 'Lato BoldItalic' !important;
     color: white;
+}
+ion-card {
+    --background: #201c1c;
+}
+
+ion-input{
+    --background: #201c1c;
+    background-color: #201c1c;
+    color: white
+}
+
+:host {
+    --ion-background-color: #201c1c;
+    background-color: #201c1c;
+    --background: #201c1c;
 }

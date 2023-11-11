@@ -3,15 +3,11 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataBaseService } from '../services/data-base.service';
-import { AlertController } from '@ionic/angular';
 import { AnimationController} from '@ionic/angular';
 import { Usuario } from 'src/app/model/usuario';
 import { Asistencia } from 'src/app/model/asistencia';
-import { ToastController } from '@ionic/angular';
 import { AfterViewInit, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router , NavigationExtras} from '@angular/router';
-import jsQR, { QRCode } from 'jsqr';
-import { MessageEnum } from '../model/message-enum';
 import { AuthService } from '../services/auth.service.service';
 
 @Component({

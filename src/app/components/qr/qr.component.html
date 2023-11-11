@@ -1,23 +1,27 @@
 <ion-content class="ion-padding-horizontal" >
   <ion-title class="ion-padding-top">
     <ion-label class="ion-text-center" >
-      <h1 #Bienvenida *ngIf="!escaneando">¡Bienvenid&#64;!</h1>
+      <h1 #Bienvenida>¡Bienvenid&#64;!</h1>
       <h2 #Nombre *ngIf="usuario">{{ usuario.nombre  }} {{ usuario.apellido }}</h2>
-      <p>Escanea el código QR para registrar tu asistencia a clases</p>
+      <p>Escanea el código QR para registrar su asistencia</p>
     </ion-label>
   </ion-title>
-  <ion-content>
-    <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()">
-      Comenzar Escaneo de QR
-    </ion-button>
-  
-    <ion-button *ngIf="escaneando && plataforma === 'web'" (click)="detenerEscaneoQR()">
-      Detener escaneo de QR
-    </ion-button>
-  
-    <video #video [hidden]="!escaneando" width="100%"></video>
-    <canvas #canvas hidden></canvas>
-  </ion-content>
+    <ion-grid>
+      <video #video [hidden]="!escaneando" width="100%"></video>
+      <canvas #canvas hidden></canvas>
+
+      <a *ngIf="!escaneando" (click)="comenzarEscaneoQR()" class="qr">
+        <img src="assets/img/QR_code_for_mobile_English_Wikipedia.svg.png" style="height: 450px;">
+      </a>
+      <p (click)="comenzarEscaneoQR()" *ngIf="!escaneando" style="position:relative; top: -235px;"> Presione para activar la camara </p>
+      
+      <!-- <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()">
+        Comenzar Escaneo de QR
+      </ion-button> -->
     
-    
+      <ion-button *ngIf="escaneando && plataforma === 'web'" (click)="detenerEscaneoQR()" shape="round" class="ion-text-center">
+        <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+        Detener escaneo de QR
+      </ion-button>
+    </ion-grid>
 </ion-content>
