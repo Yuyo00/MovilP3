@@ -2,7 +2,7 @@
   <ion-title class="ion-padding-top">
     <ion-label class="ion-text-center" >
       <h1 #Bienvenida>¡Bienvenid&#64;!</h1>
-      <h2 #Nombre *ngIf="usuario">{{ usuario.nombre  }} {{ usuario.apellido }}</h2>
+      <h2 id="saludo" #Nombre *ngIf="usuario">{{ usuario.nombre  }} {{ usuario.apellido }}</h2>
       <p>Escanea el código QR para registrar su asistencia</p>
     </ion-label>
   </ion-title>

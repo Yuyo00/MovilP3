@@ -11,7 +11,7 @@
   <ion-toolbar>
     <ion-segment [(ngModel)]="componenteActual" value="qr" (ionChange)="segmentChanged($event)">
 
-      <ion-segment-button value="qr">
+      <ion-segment-button value="qr" id="qr">
         <ion-label>QR</ion-label>
       </ion-segment-button>
 
@@ -19,11 +19,11 @@
         <ion-label>Asistencia</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="foro">
+      <ion-segment-button value="foro" id="foro">
         <ion-label>Foro</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="misdatos">
+      <ion-segment-button value="misdatos" id="misdatos">
         <ion-label>Perfil</ion-label>
       </ion-segment-button>
 

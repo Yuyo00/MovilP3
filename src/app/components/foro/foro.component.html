@@ -3,7 +3,7 @@
     ¡Foro DuocUC!
   </ion-title>
   <div id="selectDiv">
-    <ion-select placeholder="Seleccione usuario publicador" class="ion-float-right ion-text-center" [(ngModel)]="selectedUserId" (ngModelChange)="cambiarUsuario($event)">
+    <ion-select placeholder="Seleccione usuario publicador" id="seleccionUsuario" class="ion-float-right ion-text-center" [(ngModel)]="selectedUserId" (ngModelChange)="cambiarUsuario($event)">
       <ion-select-option *ngFor="let u of usuarios" [value]="u.id">
         {{u.name}}
       </ion-select-option>
@@ -21,18 +21,18 @@
 
     <ion-item style="--background: transparent;" class="ion-padding-horizontal">
       <ion-label position="floating" color="medium">Tema principal</ion-label>
-      <ion-input [(ngModel)]="publicacion.title"></ion-input>
+      <ion-input [(ngModel)]="publicacion.title" id="tituloPublicacion"></ion-input>
     </ion-item>
 
     <ion-item style="--background: transparent;" class="ion-padding-horizontal">
       <ion-label position="floating" color="medium">Cuentanos algo!</ion-label>
-      <ion-textarea [(ngModel)]="publicacion.body"></ion-textarea>
+      <ion-textarea [(ngModel)]="publicacion.body" id="contenidoPublicacion"></ion-textarea>
     </ion-item>
 
     <ion-grid>
       <ion-row class="ion-float-right">
         <ion-col>
-          <ion-button shape="round" (click)="guardarPublicacion()">
+          <ion-button shape="round" (click)="guardarPublicacion()" id="crearPublicacion">
             Enviar
           </ion-button>
           <ion-button id="Limpiar" shape="circle" (click)="limpiarPublicacion()" size="small" >
@@ -69,7 +69,7 @@
         <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
       </ion-button>
   
-      <ion-button shape="circle" color="danger" id="outline" (click)="eliminarPublicacion(p)">
+      <ion-button shape="circle" color="danger" class="eliminar-btn" id="outline" (click)="eliminarPublicacion(p)">
         <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
       </ion-button>
     </div>
