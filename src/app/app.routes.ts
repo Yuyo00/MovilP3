@@ -5,6 +5,7 @@ import { MisclasesComponent } from './components/misclases/misclases.component';
 import { QrComponent } from './components/qr/qr.component';
 import { loginGuard } from './guards/login-guard.service';
 import { authGuard } from './guards/auth-guard.service';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 export const routes: Routes = [
@@ -27,6 +28,10 @@ export const routes: Routes = [
       {
         path: 'misdatos',
         component: MisdatosComponent
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
       }
     ]
   },
