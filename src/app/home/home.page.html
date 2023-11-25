@@ -11,11 +11,11 @@
   <ion-toolbar>
     <ion-segment [(ngModel)]="componenteActual" value="qr" (ionChange)="segmentChanged($event)">
 
-      <ion-segment-button value="qr" id="qr">
+      <ion-segment-button *ngIf="usuario && usuario.correo != 'admin@duocuc.cl' " value="qr" id="qr">
         <ion-label>QR</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button value="misclases">
+      <ion-segment-button *ngIf="usuario && usuario.correo != 'admin@duocuc.cl' " value="misclases">
         <ion-label>Asistencia</ion-label>
       </ion-segment-button>
 
@@ -25,6 +25,10 @@
 
       <ion-segment-button value="misdatos" id="misdatos">
         <ion-label>Perfil</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' " value="admin" id="admin">
+        <ion-label>Admin</ion-label>
       </ion-segment-button>
 
     </ion-segment>
