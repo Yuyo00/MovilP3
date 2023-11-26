@@ -27,7 +27,9 @@
         <ion-label>Perfil</ion-label>
       </ion-segment-button>
 
-      <ion-segment-button *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' " value="admin" id="admin">
+      <ion-segment-button 
+      *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' " 
+      value="admin" id="admin">
         <ion-label>Admin</ion-label>
       </ion-segment-button>
 
@@ -49,3 +51,5 @@
     </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+<!-- *ngIf="usuario && usuario.correo === 'admin@duocuc.cl' "  -->

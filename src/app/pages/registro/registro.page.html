@@ -1,0 +1,72 @@
+<ion-content no-scroll class="bg-image">
+
+  <ion-title class="ion-padding-top ion-text-center">
+    <img src="assets/img/logo_duoc.png" style="height: 80px;">
+    <h1>Sistema de Asistencia DuocUC</h1>
+  </ion-title>
+  
+  <div class="ion-padding-vertical" style="padding-left: 10%; padding-right: 10%;">
+    
+    <ion-card class="ion-text-center ion-padding-vertical login" >
+
+      <ion-card-title class="ion-text-center">
+        <ion-label>
+          <h2>Registro</h2>
+        </ion-label>
+      </ion-card-title>
+
+      <form >
+        <ion-card-content>
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input id="nombre"></ion-input>
+          </ion-item>
+      
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input id="apellido">
+            </ion-input>
+          </ion-item>
+    
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Correo Institucional</ion-label>
+            <ion-input id="correo" type="email"></ion-input>
+          </ion-item>
+    
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Pregunta Secreta</ion-label>
+            <ion-input id="pregunta"></ion-input>
+          </ion-item>
+    
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Respuesta Secreta</ion-label>
+            <ion-input id="respuesta"></ion-input>
+          </ion-item>
+      
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input id="password" type="password"></ion-input>
+          </ion-item>
+    
+          <ion-item style="--background: transparent;">
+            <ion-label position="floating">Repita su Contraseña</ion-label>
+            <ion-input id="password2" type="password"></ion-input>
+          </ion-item>
+        
+          <br>
+          <ion-button shape="round" id="ingresar" (click)="crearPerfil()">
+            Crear Cuenta
+            <ion-icon  name="chevron-forward-outline"></ion-icon>
+          </ion-button>
+
+        </ion-card-content>
+      </form>
+      
+      <ion-label>
+        <a (click)="login()">Ya tengo una cuenta cuenta</a>
+      </ion-label>
+    </ion-card> 
+
+  </div>
+  
+</ion-content>

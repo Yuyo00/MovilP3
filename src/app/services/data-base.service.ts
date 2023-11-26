@@ -69,6 +69,11 @@ export class DataBaseService {
     await this.leerUsuarios();
   }
 
+  async crearUsuario(correo: any, password: any, nombre: any, apellido: any, preguntaSecreta: any, respuestaSecreta: any, sesionActiva: any) {
+    const sql = 'INSERT INTO USUARIO (correo, password, nombre, apellido, preguntaSecreta, respuestaSecreta, sesionActiva) VALUES (?,?,?,?,?,?,?);'
+    await this.db.run(sql, [correo, password, nombre, apellido, preguntaSecreta, respuestaSecreta, sesionActiva])
+  }
+
   // Cada vez que se ejecute leerUsuario() la aplicación va a cargar los usuarios desde la base de datos,
   // y por medio de la instrucción "this.listaUsuarios.next(usuarios);" le va a notificar a todos los programas
   // que se subscribieron a la propiedad "listaUsuarios", que la tabla de usuarios se acaba de cargar. De esta

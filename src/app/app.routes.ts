@@ -65,5 +65,9 @@ export const routes: Routes = [
   {
     path: 'correo',
     loadComponent: () => import('./pages/correo/correo.page').then(m => m.CorreoPage)
+  },  {
+    path: 'registro',
+    loadComponent: () => import('./pages/registro/registro.page').then( m => m.RegistroPage)
   }
+
 ];

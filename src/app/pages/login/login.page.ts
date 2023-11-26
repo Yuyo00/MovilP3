@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router'; 
-import { AuthService } from 'src/app/services/auth.service.service';
+import { AuthService } from '../../services/auth.service.service';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +29,10 @@ export class LoginPage implements OnInit {
 
   public correo() {
     this.router.navigate(['/correo']); 
+  }
+
+  public registro() {
+    this.router.navigate(['/registro'])
   }
 
 }

@@ -3,11 +3,11 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationController, IonicModule, ToastController } from '@ionic/angular';
-import { Asistencia } from 'src/app/model/asistencia';
-import { showAlertDUOC, showToast } from 'src/app/model/message';
-import { Usuario } from 'src/app/model/usuario';
-import { AuthService } from 'src/app/services/auth.service.service';
-import { DataBaseService } from 'src/app/services/data-base.service';
+import { Asistencia } from '../../model/asistencia';
+import { showAlertDUOC, showToast } from '../../model/message';
+import { Usuario } from '../../model/usuario';
+import { AuthService } from '../../services/auth.service.service';
+import { DataBaseService } from '../../services/data-base.service';
 
 @Component({
   selector: 'app-misdatos',
