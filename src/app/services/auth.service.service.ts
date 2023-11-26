@@ -52,12 +52,20 @@ export class AuthService {
         this.router.navigate(['home/qr']);
       } else {
         await this.bd.validarUsuario(correo, password).then(async (usuario: Usuario | undefined) => {
-          if (usuario) {
+          if (usuario?.correo === 'admin@duocuc.cl' ) {
+            showToast(`¡Bienvenido ${usuario.nombre} ${usuario.apellido}!`);
+            this.guardarUsuarioAutenticado(usuario);
+            this.primerInicioSesion.next(true);
+            this.router.navigate(['home/foro']);
+          }
+          else if(usuario){
             showToast(`¡Bienvenido ${usuario.nombre} ${usuario.apellido}!`);
             this.guardarUsuarioAutenticado(usuario);
             this.primerInicioSesion.next(true);
             this.router.navigate(['home/qr']);
-          } else {
+          }
+          
+          else {
             showToast(`El correo o la password son incorrectos`);
             this.router.navigate(['login']);
           }

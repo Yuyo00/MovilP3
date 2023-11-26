@@ -27,7 +27,25 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "exclude": [
+    "cypress.config.ts"
+  ],
+  "files":[
+    "cypress.config.ts",
+    "src/app/pages/pregunta/pregunta.page.spec.ts",
+    "src/app/components/foro/foro.component.spec.ts",
+    "src/app/components/misclases/misclases.component.spec.ts",
+    "src/app/components/misdatos/misdatos.component.spec.ts",
+    "src/app/home/home.page.spec.ts",
+    "src/app/model/asistencia.spec.ts",
+    "src/app/model/message-enum.spec.ts",
+    "src/app/model/message.spec.ts",
+    "src/app/model/persona.spec.ts",
+    "src/app/model/usuario.spec.ts",
+    "src/app/pages/correcto/correcto.page.spec.ts",
+    "src/app/pages/correo/correo.page.spec.ts",
+    "src/app/pages/incorrecto/incorrecto.page.spec.ts",
+    "src/app/pages/login/login.page.spec.ts",
+    "src/app/pages/pregunta/pregunta.page.spec.ts"
+  ],
 }

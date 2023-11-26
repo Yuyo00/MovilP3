@@ -1,0 +1,19 @@
+<ion-content>
+
+
+  <ion-card-title class="ion-text-center">
+    Administrar Usuarios 
+  </ion-card-title>
+  <ion-card *ngFor="let user of bd.listaUsuarios | async">
+    <ion-card-header>
+      {{ user.nombre }} {{ user.apellido }}
+    </ion-card-header>
+    <ion-card-content>
+      Correo: {{ user.correo }}
+     
+    </ion-card-content>
+    <div *ngIf="user.correo !== 'admin@duocuc.cl'">
+      <ion-button (click)="eliminarUsuario(user)">Eliminar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
