@@ -8,7 +8,7 @@ import { showAlertDUOC, showToast } from '../../model/message';
 import { Usuario } from '../../model/usuario';
 import { AuthService } from '../../services/auth.service.service';
 import { DataBaseService } from '../../services/data-base.service';
-
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-misdatos',
   templateUrl: './misdatos.component.html',
@@ -28,7 +28,10 @@ export class MisdatosComponent  implements OnInit, AfterViewInit{
     private activeroute: ActivatedRoute , 
     private router: Router, 
     private animationController: AnimationController,
-    private bd: DataBaseService) {
+    private bd: DataBaseService,
+    private alertController: AlertController,
+    private toastController: ToastController
+    ) {
     this.usuario = new Usuario();
     
     this.activeroute.queryParams.subscribe(params => { 
@@ -107,5 +110,77 @@ export class MisdatosComponent  implements OnInit, AfterViewInit{
     this.authService.guardarUsuarioAutenticado(this.usuario);
     showToast('Sus datos fueron actualizados');
   }
+  async cambiarContrasena() {
+    const alert = await this.alertController.create({
+      header: 'Cambiar Contraseña',
+      inputs: [
+        {
+          name: 'contrasenaActual',
+          type: 'password',
+          placeholder: 'Contraseña Actual'
+        },
+        {
+          name: 'nuevaContrasena',
+          type: 'password',
+          placeholder: 'Nueva Contraseña'
+        },
+        {
+          name: 'repetirContrasena',
+          type: 'password',
+          placeholder: 'Repetir Contraseña'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancelado');
+          }
+        },
+        {
+          text: 'Guardar',
+          handler: async (data) => {
+            try {
+              if (!data.nuevaContrasena || !data.repetirContrasena) {
+                throw new Error('Las contraseñas no pueden estar vacías');
+              }
+              if (data.nuevaContrasena !== data.repetirContrasena) {
+                throw new Error('Las contraseñas no coinciden');
+              }
+              await this.bd.cambiarContrasena(
+                this.usuario.correo,
+                data.contrasenaActual,
+                data.nuevaContrasena,
+                data.repetirContrasena
+              );
+
+              this.mostrarToast('Contraseña cambiada exitosamente', 'success');
+            } catch (error) {
+              if (data.contrasenaActual !== this.usuario.password) {
+                this.mostrarToast('Contraseña actual incorrecta', 'danger');
+              } else if (data.nuevaContrasena !== data.repetirContrasena) {
+                this.mostrarToast('Las contraseñas no coinciden', 'danger');
+              } else if (data.nuevaContrasena.trim() || data.repetirContrasena.trim() === '' ){
+                this.mostrarToast('Las contraseñas no pueden ser vacias', 'danger');
+              }
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async mostrarToast(mensaje: string, color: string) {
+    const toast = await this.toastController.create({
+      message: mensaje,
+      duration: 2000, 
+      color: color
+    });
+    toast.present();
+  }
+  
 
 }

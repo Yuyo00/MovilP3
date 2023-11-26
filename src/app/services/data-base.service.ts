@@ -113,4 +113,21 @@ export class DataBaseService {
     await this.db.run(sql, [sesionActiva, correo]);
     await this.leerUsuarios();
   }
+  async cambiarContrasena(correo: string, contrasenaActual: string, nuevaContrasena: string, repetirContrasena: string) {
+    const usuario = await this.leerUsuario(correo);
+
+    if (!usuario) {
+      return;
+    }
+
+    if (usuario.password !== contrasenaActual) {
+      return;
+    }
+
+    if (nuevaContrasena !== repetirContrasena) {
+      return;
+    }
+    await this.db.run('UPDATE USUARIO SET password=? WHERE correo=?', [nuevaContrasena, correo]);
+
+  }
 }
