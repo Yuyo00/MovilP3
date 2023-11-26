@@ -36,11 +36,13 @@
   </ion-list>
 
   <ion-label class="listaClase">
-    <ion-button (click)="actualizarPerfil()" shape="round" id="actualizar">
+    <ion-button (click)="actualizarPerfil()" fill="solid" shape="round" id="actualizar" color="warning">
       Actualizar mis datos
-    </ion-button>
-    <ion-button (click)="cambiarContrasena()" shape="round" >
-      Cambiar contraseña
+      <ion-icon  name="chevron-forward-outline"></ion-icon>
     </ion-button>
   </ion-label>
+  <ion-label class="listaClase">
+    <a (click)="cambiarContrasena()" class="ion-text-center">Cambiar contraseña</a>
+  </ion-label>
+
 </ion-content>

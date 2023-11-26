@@ -21,9 +21,9 @@ ion-header {
     color: white;
   }
 
-ion-text {
-  color: #2C2C2C !important;
-}
+// ion-text {
+//   color: #2C2C2C !important;
+// }
 
 .listaClase{
   justify-content: center;
@@ -46,18 +46,24 @@ h3 {
   color: #2C2C2C !important;
 }
 
+// ion-button {
+//   --background: rgb(0, 0, 0, 0.5);
+//   // --background: red;
+//   border-radius: 21px;
+//   font-family: 'Lato Regular' !important;
+// }
+
+$color-orange: #FFB800;
+
 ion-button {
-  --background: rgb(0, 0, 0, 0.5);
-  // --background: red;
-  border-color: white;
-  border: solid;
-  border-radius: 21px;
-  font-family: 'Lato Regular' !important;
+    --background: #FFB800 !important;
+    font-family: 'Lato Regular' !important;
+    --color: white !important;
 }
 
-.text-black {
-  color: #2C2C2C;
-}
+// .text-black {
+//   color: #2C2C2C;
+// }
 
 h2 {
   padding-left: 1rem;
@@ -80,4 +86,8 @@ ion-item, ion-list {
   --ion-background-color: #121212;
   background-color: #121212;
   --background: #121212;
+}
+a {
+  font-family: 'Lato BoldItalic' !important;
+  color: white;
 }
