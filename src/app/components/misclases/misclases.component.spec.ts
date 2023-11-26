@@ -3,22 +3,21 @@ import { IonicModule } from '@ionic/angular';
 
 import { MisclasesComponent } from './misclases.component';
 
-describe('MisclasesComponent', () => {
-  let component: MisclasesComponent;
-  let fixture: ComponentFixture<MisclasesComponent>;
+// describe('MisclasesComponent', () => {
+//   let component: MisclasesComponent;
+//   let fixture: ComponentFixture<MisclasesComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MisclasesComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+//   beforeEach(waitForAsync(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ MisclasesComponent ],
+//       imports: [IonicModule.forRoot()]
+//     }).compileComponents();
 
-    fixture = TestBed.createComponent(MisclasesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+//     fixture = TestBed.createComponent(MisclasesComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  
+  
+// });

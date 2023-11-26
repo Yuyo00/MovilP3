@@ -11,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
+  title = 'Asistencia DUOC'
 
   public environmentInjector = inject(EnvironmentInjector);
 
