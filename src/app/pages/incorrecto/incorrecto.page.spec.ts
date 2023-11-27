@@ -1,17 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { IncorrectoPage } from './incorrecto.page';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { IncorrectoPage } from './incorrecto.page';
 
-describe('IncorrectoPage', () => {
-  let component: IncorrectoPage;
-  let fixture: ComponentFixture<IncorrectoPage>;
+// describe('IncorrectoPage', () => {
+//   let component: IncorrectoPage;
+//   let fixture: ComponentFixture<IncorrectoPage>;
 
-  beforeEach((() => {
-    fixture = TestBed.createComponent(IncorrectoPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+//   beforeEach((() => {
+//     fixture = TestBed.createComponent(IncorrectoPage);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

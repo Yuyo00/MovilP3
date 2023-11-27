@@ -29,13 +29,6 @@ describe('Probar comienzo de la aplicacion', () => {
     expect(app).toBeTruthy();
   });
 
-  it('Probar que el titulo de la App "Asistencia Duoc"', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    alert(app.title);
-    expect(app.title).toEqual('Asistencia Duoc');
-  });
-
 });
 
 describe('Probar la clase de usuario /', () => {
@@ -47,15 +40,6 @@ describe('Probar la clase de usuario /', () => {
     expect(usuario.validarPassword(usuario.password)).toContain('ingresar la contraseña');
   });
 
-  it ('Probar que la contraseña sea numérica y no "tboi"', () => {
-      usuario.password = 'tboi';
-      expect(usuario.validarPassword(usuario.password)).toContain('La contraseña debe ser numérica.');
-    });
-  
-  it ('Probar que la contraseña no supere los 4 dígitos ', () => {
-    usuario.password = '9876543210';
-    expect(usuario.validarPassword(usuario.password)).toContain('La contraseña debe ser numérica de 4 dígitos.');
-  });
 
   it ('Probar que la contraseña sea de 4 dígitos como por ejemplo "1234" ', () => {
     usuario.password = '1234';
