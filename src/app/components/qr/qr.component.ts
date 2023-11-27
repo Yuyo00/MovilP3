@@ -3,15 +3,15 @@ import { NgZone, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from 
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { AlertController, AnimationController, IonicModule, ToastController } from '@ionic/angular';
-import { Asistencia } from 'src/app/model/asistencia';
-import { Usuario } from 'src/app/model/usuario';
+import { Asistencia } from '../../model/asistencia';
+import { Usuario } from '../../model/usuario';
 import jsQR, { QRCode } from 'jsqr';
-import { AuthService } from 'src/app/services/auth.service.service';
-import { DataBaseService } from 'src/app/services/data-base.service';
-import { SQLiteService } from 'src/app/services/sqlite.service';
-import { showAlertDUOC, showAlertYesNoDUOC } from 'src/app/model/message';
+import { AuthService } from '../../services/auth.service.service';
+import { DataBaseService } from '../../services/data-base.service';
+import { SQLiteService } from '../../services/sqlite.service';
+import { showAlertDUOC, showAlertYesNoDUOC } from '../../model/message';
 import { BarcodeFormat, BarcodeScanner, ScanResult } from '@capacitor-mlkit/barcode-scanning';
-import { MessageEnum } from 'src/app/model/message-enum';
+import { MessageEnum } from '../../model/message-enum';
 
 
 @Component({
