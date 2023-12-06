@@ -21,12 +21,14 @@ describe('Verificar app', () => {
       cy.contains('Ingresar').click().then(()=>{
         cy.wait(1000);
         cy.url().should('include', '/home');
+        cy.get('#cerrarSesion').click();
       });
     });
   });
 
   it('Verificar publicar en el foro', () => {
-    cy.visit('http://localhost:8100/home').then(()=>{
+    cy.visit('http://localhost:8100').then(()=>{
+    cy.contains('Ingresar').click();
     cy.get('#foro').click().then(()=>{
       cy.wait(1000);
       cy.get('#seleccionUsuario').click().then(()=>{
@@ -39,6 +41,7 @@ describe('Verificar app', () => {
             cy.get('#contenidoPublicacion').type('Contenido de prueba uwu');
             cy.get('#crearPublicacion').click().then(()=>{
               cy.contains('Publicacion de prueba');
+              cy.get('#cerrarSesion').click();
               });
             });
 
@@ -49,17 +52,19 @@ describe('Verificar app', () => {
   });
 
   it('Eliminar ultima publicación hecha', () => {
-    cy.visit('http://localhost:8100/home').then(() => {
+    cy.visit('http://localhost:8100').then(() => {
+      cy.contains('Ingresar').click();
       cy.get('#foro').click().then(()=>{
         cy.wait(2000);
         cy.get('.eliminar-btn').first().click();
-
+        cy.get('#cerrarSesion').click();
       });
     });
   });
 
   it('Validacion campos misDatos', () => {
-    cy.visit('http://localhost:8100/home').then(() => {
+    cy.visit('http://localhost:8100').then(() => {
+      cy.contains('Ingresar').click();
       cy.get('#misdatos').click().then(()=>{
         cy.get('#nombre').invoke('val','');
         cy.get('#nombre').type(' ');
@@ -130,6 +135,7 @@ describe('Verificar app', () => {
           cy.get('.alert-button').click();
           
         });
+        cy.get('#cerrarSesion').click();
 
 
 
@@ -138,7 +144,8 @@ describe('Verificar app', () => {
   });
 
   it('Verificar actualizar datos', () => {
-    cy.visit('http://localhost:8100/home').then(() => {
+    cy.visit('http://localhost:8100').then(() => {
+      cy.contains('Ingresar').click();
       cy.get('#misdatos').click().then(()=>{
         cy.get('#nombre').invoke('val','');
         cy.get('#nombre').type('Juana');
@@ -147,6 +154,7 @@ describe('Verificar app', () => {
       });
       cy.get('#qr').click().then(()=>{
         cy.get('#saludo').should('include.text', 'Juana Torres');
+        cy.get('#cerrarSesion').click();
       });
     });
   });
